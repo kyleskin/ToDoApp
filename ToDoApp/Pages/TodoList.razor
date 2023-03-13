@@ -1,0 +1,27 @@
+@page "/TodoList"
+@using ToDoApp.Models
+@using ToDoApp.Services
+
+
+Todos
+
+
+@code {
+
+        [Inject]
+        private ITodoService TodoService { get; set; } = null!;
+        
+        public IEnumerable<Todo>? Todos { get; private set; } = Enumerable.Empty<Todo>();
+
+        protected override async Task OnInitializedAsync()
+        {
+                await base.OnInitializedAsync();
+                Todos = await TodoService.GetInProgressTodosAsync();
+        }
+
+        public async Task ShowAllTodos()
+        {
+                Todos = await TodoService.GetTodosAsync();
+        }
+
+}

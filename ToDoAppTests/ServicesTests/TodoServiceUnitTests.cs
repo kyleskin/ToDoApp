@@ -126,7 +126,7 @@ public class TodoServiceUnitTests
     }
     
     [Fact]
-    public async void GetTodo_ShouldTodoNotFoundException_WhenCalledWithInvalidId()
+    public async void GetTodo_ShouldThrowTodoNotFoundException_WhenCalledWithInvalidId()
     {
         // Arrange
         var mockTodoRepo = new Mock<ITodoRepository>();
