@@ -25,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ServicesTests" />
+      <ProjectReference Include="..\ToDoApp\ToDoApp.csproj" />
     </ItemGroup>
 
 </Project>
